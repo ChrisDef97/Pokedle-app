@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #cdeeff;
+  color: #1c1c1c;
+}
+
+header {
+  padding: 16px 24px;
+}
+
+header h1 {
+  margin: 0;
+  color: #2a63c9;
+}
+
+#app {
+  padding: 24px;
+}
