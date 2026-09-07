@@ -8,10 +8,40 @@
 <body>
   <header>
     <h1>Pokedle Desktop</h1>
+    <button id="new-game-btn">Nueva partida</button>
   </header>
 
   <main id="app">
-    <p id="status">Cargando dataset local...</p>
+    <p id="status">Cargando...</p>
+
+    <form id="guess-form" autocomplete="off">
+      <input
+        type="text"
+        id="guess-input"
+        list="pokemon-names"
+        placeholder="Escribe el nombre de un Pokémon..."
+        disabled
+      />
+      <datalist id="pokemon-names"></datalist>
+      <button type="submit" id="guess-btn" disabled>Adivinar</button>
+    </form>
+    <p id="guess-error" class="error"></p>
+
+    <table id="guess-table">
+      <thead>
+        <tr>
+          <th>Pokémon</th>
+          <th>Tipo 1</th>
+          <th>Tipo 2</th>
+          <th>Etapa Evolutiva</th>
+          <th>Evolución Completa</th>
+          <th>Color</th>
+          <th>Hábitats</th>
+          <th>Gen.</th>
+        </tr>
+      </thead>
+      <tbody id="guess-rows"></tbody>
+    </table>
   </main>
 
   <script src="renderer.js"></script>

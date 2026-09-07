@@ -1,7 +1,9 @@
 const { contextBridge, ipcRenderer } = require("electron");
 
-// Todo lo que el renderer (HTML/JS de la interfaz) puede usar
-// se define aquí explícitamente. Nada más queda expuesto.
+// Todo lo que el renderer puede usar se define aquí explícitamente.
 contextBridge.exposeInMainWorld("pokedleAPI", {
-  loadPokemonData: () => ipcRenderer.invoke("load-pokemon-data"),
+  getPokemonList: () => ipcRenderer.invoke("get-pokemon-list"),
+  newGame: (options) => ipcRenderer.invoke("new-game", options),
+  submitGuess: (guessName) => ipcRenderer.invoke("submit-guess", guessName),
+  revealTarget: () => ipcRenderer.invoke("reveal-target"),
 });
